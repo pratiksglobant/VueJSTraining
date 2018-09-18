@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="vue-exercise">
+      <p>1: Fill the p with your Name and Age - using Interpolation </p>
+      <p>Interpolated data - {{name}} ({{age}})</p>
+      <hr>
+      
+      <p>2: Output your age, multiplied by 3</p>
+      <p>{{thriceTheAge(age)}}</p>
+      <hr>
+      
+      <p>3: Call a function to output a random float between 0 and 1 (Math.random())</p>
+      <p>{{Math.random()}}</p>
+      <hr>
+      
+      <p>4: Search any image on Google and output it here by binding the "src" attribute</p>
+      <div>
+        <img v-bind:src='src' style="width:100px;height:100px">
+      </div>
+      <hr>
+      
+      <p>5: Pre-Populate this input with your name (set the "value" attribute)</p>
+      <div>
+        <input type="text" v-bind:value='name'>
+      </div>
+    </div>
+      
+    <script>
+        new Vue({
+            el: '#vue-exercise',
+            data: {
+                name: 'Pratik Solanki',
+                age: 28,
+                src: 'https://11m5ki43y82budjol1gjvv5s-wpengine.netdna-ssl.com/wp-content/uploads/2018/05/Vue.js-cta-main.jpg'
+            },
+            methods: {
+              thriceTheAge : function(age) {
+                return age * 3;
+                //this.age can also work
+              }
+              //we can also calculate random number by writing a method for it as done for age * 3
+            }
+        });
+    </script>
+  </body>
+</html>
